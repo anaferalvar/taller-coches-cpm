@@ -44,7 +44,10 @@ function checkValidityState(field) {
     }
 }
 
-function validateForm() {
+function validateForm(event) {
+    if (event) {
+        event.preventDefault();
+    }
     // Limpiar el contenedor de errores
     const errorBox = document.getElementById('error-box');
     errorBox.textContent='';
@@ -99,3 +102,33 @@ function handleMouseOut(element) {
     element.classList.remove('form-highlight');
 }
 
+async function sendSupabaseForm(errorBox) {
+    const name = document.getElementById('nombre').value.trim();
+    const phone = document.getElementById('telefono').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const plate = document.getElementById('matricula').value.trim();
+    const motive = document.getElementById('servicio').value;
+    const description = document.getElementById('mensaje').value.trim();
+    const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked'))
+        .map(item => item.value).join(', ');
+        const { error } = await db.from('contact_messages').insert([{
+            name: name,
+            phone: phone,
+            email: email,
+            plate: plate,
+            motive: motive,
+            description: description}
+        ]);
+        errorBox.classList.add('visible');
+        if (error) {
+            errorBox.textContent = 'Error al guardar el mensaje: '+ error.message;
+            return;
+        }
+        errorBox.style.color = 'green';
+        errorBox.textContent = 'Mensaje enviado y guardado correctamente.';
+        form.reset();
+        const preview = document.getElementById('preview');
+        if (preview) {  
+            preview.innerHTML = '';
+        }
+}
