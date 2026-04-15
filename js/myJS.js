@@ -109,15 +109,13 @@ async function sendSupabaseForm(errorBox) {
     const plate = document.getElementById('matricula').value.trim();
     const motive = document.getElementById('servicio').value;
     const description = document.getElementById('mensaje').value.trim();
-    const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked'))
-        .map(item => item.value).join(', ');
-        const { error } = await db.from('contact_messages').insert([{
+    const { error } = await db.from('contact_messages').insert([{
             name: name,
             phone: phone,
             email: email,
             plate: plate,
-            motive: motive,
-            description: description}
+            description: description,
+            motive: motive}
         ]);
         errorBox.classList.add('visible');
         if (error) {
