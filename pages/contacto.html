@@ -1,0 +1,242 @@
+<!doctype html>
+<!--ReqH1-->
+<html lang="es-ES">
+<head>
+    <!--ReqH2-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánico Feralvar - Contacto</title>
+    <meta name="author" content="Taller Mecánico Feralvar">
+    <meta name="description" content="Formulario de contacto y datos del Taller Mecánico Feralvar en Morcín, Asturias.">
+    <meta name="keywords" content="contacto, taller, coches, Morcín, Asturias, formulario">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <script src="../js/myJS.js" defer></script>
+    <script defer src="../js/i18n/translations.js"></script>
+    <script defer src="../js/i18n/translationsHTML.js"></script>
+    <script defer src="../js/i18n/i18n.js"></script>
+</head>
+<body>
+
+    <!--ReqH3-->
+    <header>
+        <h1 data-i18n="site.title">Taller Mecánico Feralvar</h1>
+        <p data-i18n="navigation.contact">Contacto</p>
+        <div class="language-box">
+            <label for="language-switcher" data-i18n="controls.language.label">Idioma</label>
+            <select id="language-switcher" onchange="setLocale(this.value)">
+                <option value="es" data-i18n="controls.language.spanish">Español</option>
+                <option value="en" data-i18n="controls.language.english">English</option>
+            </select>
+        </div>
+    </header>
+
+    <!--ReqH3-->
+    <nav>
+        <!--ReqH8-->
+        <ul>
+            <li><a href="../index.html" target="_self" data-i18n="navigation.home">Inicio</a></li>
+            <li><a href="eventos.html" target="_self" data-i18n="navigation.events">Eventos y Servicios</a></li>
+            <li><a href="contacto.html" target="_self" data-i18n="navigation.contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!--ReqH3-->
+    <main>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="contact.dataTitle">Datos de contacto</h2>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="contact.locationTitle">Dónde encontrarnos</h3>
+                <p>
+                    Estamos ubicados en
+                    <strong id="ct-strong-address" data-i18n-html="contact.location.strong">
+                        Carretera de Santiago, 99, Morcín (Asturias)
+                    </strong>.
+                    Puedes visitarnos en horario de lunes a viernes de 8:30 a 19:00 h,
+                    y los sábados de 9:00 a 13:00 h.
+                </p>
+                <p>
+                    <!--ReqH6-->
+                    <em id="ct-em-closed" data-i18n-html="contact.location.em">
+                        Cerramos los domingos y festivos.
+                    </em>
+                    Para urgencias fuera de horario, llámanos al
+                    <strong id="ct-strong-phone" data-i18n-html="contact.location.strongPhone">981 000 000</strong>.
+                </p>
+
+                <!--ReqH14-->
+                <h4 data-i18n="contact.scheduleTitle">Horario semanal</h4>
+                <ul>
+                    <li data-i18n="contact.scheduleItem1">Lunes a viernes: 8:30 - 19:00 h</li>
+                    <li data-i18n="contact.scheduleItem2">Sábados: 9:00 - 13:00 h</li>
+                    <li data-i18n="contact.scheduleItem3">Domingos y festivos: Cerrado</li>
+                </ul>
+            </article>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="contact.directionsTitle">Cómo llegar</h3>
+                <p>
+                    <!--ReqH7-->
+                    <dfn id="ct-dfn-acceso" data-i18n-html="contact.directions.dfn">El acceso rodado</dfn>
+                    más sencillo es por la N-350 dirección L'Angleiru.
+                    También puedes consultarnos por teléfono y te daremos indicaciones precisas.
+                    Contamos con
+                    <em id="ct-em-parking" data-i18n-html="contact.directions.em">
+                        zona de aparcamiento gratuita
+                    </em>
+                    para clientes.
+                </p>
+            </article>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="contact.formTitle">Formulario de contacto</h2>
+            <p data-i18n="contact.formIntro">Rellena el formulario y te responderemos en menos de 24 horas.</p>
+
+            <!--ReqH16-->
+            <!--ReqJ4-->
+            <!--ReqJ7-->
+            <form name="formularioContacto" method="post" action="mailto:contacto@tallerrodriguez.es"
+                  onsubmit="return validateForm();" onkeydown="handleKeydown(event)" novalidate>
+
+                <!--ReqH17-->
+                <fieldset>
+                    <legend data-i18n="contact.fieldsetPersonal">Datos personales</legend>
+
+                    <label for="nombre" data-i18n="contact.labelName">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required
+                           oninput="updatePreview()"
+                           onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+
+                    <label for="email" data-i18n="contact.labelEmail">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required
+                           oninput="updatePreview(); checkValidityState(this)"
+                           onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+
+                    <label for="telefono" data-i18n="contact.labelPhone">Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono"
+                           pattern="[6-9][0-9]{8}"
+                           title="Introduce un número de teléfono español válido (9 dígitos, empezando por 6, 7, 8 o 9)"
+                           required
+                           oninput="updatePreview(); checkValidityState(this)"
+                           onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+                </fieldset>
+
+                <fieldset>
+                    <legend data-i18n="contact.fieldsetBreakdown">Información de la avería</legend>
+
+                    <label for="matricula" data-i18n="contact.labelPlate">Matrícula del vehículo:</label>
+                    <input type="text" id="matricula" name="matricula"
+                           pattern="[0-9]{4}[A-Z]{3}"
+                           title="Formato: 4 números seguidos de 3 letras mayúsculas (Ej: 1234ABC)"
+                           oninput="updatePreview(); checkValidityState(this)"
+                           onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+
+                    <label for="mensaje" data-i18n="contact.labelMessage">Descripción de la avería o consulta:</label>
+                    <textarea id="mensaje" name="mensaje" required
+                              oninput="updatePreview()"
+                              onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)"></textarea>
+
+                    <label for="servicio" data-i18n="contact.labelService">Tipo de servicio que necesitas:</label>
+                    <select id="servicio" name="servicio" onchange="updatePreview()">
+                        <option value="mecanica"    data-i18n="contact.optMechanics">Mecánica general</option>
+                        <option value="electricidad" data-i18n="contact.optElectric">Electricidad y diagnosis</option>
+                        <option value="neumaticos"  data-i18n="contact.optTires">Neumáticos y geometría</option>
+                        <option id="revision" value="revision" data-i18n="contact.optRevision">Revisión periódica</option>
+                        <option value="otro" selected data-i18n="contact.optOther">Otro</option>
+                    </select>
+                </fieldset>
+
+                <input id="enviar" type="submit" data-i18nlabel="contact.btnSend" value="Enviar consulta">
+                <input type="reset" data-i18nlabel="contact.btnReset" value="Borrar formulario">
+
+                <!-- Contenedor de errores -->
+                <div id="error-box" class="error-box"></div>
+            </form>
+        </section>
+
+        <!-- ReqJ2 -->
+        <section id="preview">
+            <h2 data-i18n="contact.previewTitle">Vista previa del formulario</h2>
+            <div>
+                <p id="preview-content">
+                    La previsualización se mostrará aquí.
+                </p>
+            </div>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="contact.responseTitle">Tabla de tiempos de respuesta</h2>
+
+            <!--ReqH15-->
+            <table>
+                <caption data-i18n="contact.responseCaption">Tiempos estimados de atención según canal de contacto</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2" data-i18n="contact.responseChannel">Canal</th>
+                        <th colspan="2" data-i18n="contact.responseTime">Tiempo de respuesta</th>
+                    </tr>
+                    <tr>
+                        <th data-i18n="contact.responseInHours">En horario de taller</th>
+                        <th data-i18n="contact.responseOutHours">Fuera de horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="contact.responsePhone">Teléfono</td>
+                        <td data-i18n="contact.responsePhoneIn">Inmediato</td>
+                        <td data-i18n="contact.responsePhoneOut">No disponible</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="contact.responseForm">Formulario web</td>
+                        <td data-i18n="contact.responseFormIn">Menos de 2 horas</td>
+                        <td data-i18n="contact.responseFormOut">Al día siguiente</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="contact.responseVisit">Visita presencial</td>
+                        <td colspan="2" data-i18n="contact.responseVisitTime">Atención directa en horario de apertura</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="contact.usefulTitle">Recursos útiles</h2>
+            <!--ReqH9-->
+            <p>
+                <span data-i18n="contact.usefulText">Consulta el estado de tu ITV en la web oficial de la </span>
+                <a href="https://www.itv.es" target="_blank" data-i18n="contact.usefulLink">Red de Estaciones ITV</a>.
+            </p>
+            <!--ReqH11-->
+            <p>
+                <span data-i18n="contact.backText">Vuelve a la </span>
+                <a href="../index.html" target="_self" data-i18n="contact.backLink">página principal</a>
+                <span data-i18n="contact.backText2"> para ver nuestros precios.</span>
+            </p>
+        </section>
+
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+        <figure>
+            <a>
+                <!--ReqH10-->
+                <img id="main-logo" src="../resources/images/logo.png" alt="Vista del logotipo" width="140" height="80">
+            </a>
+            <figcaption>Vista del logotipo del taller</figcaption>
+        </figure>
+        <p>&copy; 2026 Taller Mecánico Feralvar. Todos los derechos reservados.</p>
+        <p>Carretera de Santiago, 99 · Morcín, Asturias</p>
+    </footer>
+
+</body>
+</html>

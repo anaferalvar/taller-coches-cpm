@@ -1,0 +1,157 @@
+<!doctype html>
+<!--ReqH1-->
+<html lang="es-ES">
+<head>
+    <!--ReqH2-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánica Feralvar - Inicio</title>
+    <meta name="author" content="Taller Mecánico Feralvar">
+    <meta name="description" content="Taller de coches en Asturias especializado en mecánica general, diagnosis y revisiones.">
+    <meta name="keywords" content="taller, coches, mecánica, reparación, Asturias, Feralvar">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Las traducciones de texto plano deben cargarse antes del motor i18n -->
+    <script defer src="js/i18n/translations.js"></script>
+    <!-- Las traducciones de elementos HTML (em, code, strong…) -->
+    <script defer src="js/i18n/translationsHTML.js"></script>
+    <!-- Motor i18n — se ejecuta después de que ambos diccionarios estén listos -->
+    <script defer src="js/i18n/i18n.js"></script>
+</head>
+<body>
+
+    <!--ReqH3-->
+    <header>
+        <h1 data-i18n="site.title">Taller Mecánico Feralvar</h1>
+        <p data-i18n="site.description">Tu taller de confianza en Morcín desde 1990</p>
+        <div class="language-box">
+            <label for="language-switcher" data-i18n="controls.language.label">Idioma</label>
+            <select id="language-switcher" onchange="setLocale(this.value)">
+                <option value="es" data-i18n="controls.language.spanish">Español</option>
+                <option value="en" data-i18n="controls.language.english">English</option>
+            </select>
+        </div>
+    </header>
+
+    <!--ReqH3-->
+    <nav>
+        <!--ReqH8-->
+        <ul>
+            <li><a href="index.html" target="_self" data-i18n="navigation.home">Inicio</a></li>
+            <li><a href="pages/eventos.html" target="_self" data-i18n="navigation.events">Eventos y Servicios</a></li>
+            <li><a href="pages/contacto.html" target="_self" data-i18n="navigation.contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!--ReqH3-->
+    <main>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="home.welcomeTitle">Bienvenidos a nuestro taller</h2>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="home.identityTitle">¿Quiénes somos?</h3>
+
+                <!--
+                    ReqH6 — <em> y <strong> se traducen por separado con innerHTML (data-i18n-html).
+                    El resto del párrafo permanece en el HTML y el JS solo altera los elementos inline.
+                -->
+                <p>
+                    Somos un taller familiar con más de 30 años de experiencia en el sector de la automoción.
+                    Ofrecemos un servicio
+                    <strong id="index-strong-services" data-i18n-html="home.identityText1.strong">
+                        profesional, honesto y de calidad
+                    </strong>
+                    para todo tipo de vehículos.
+                    <!--ReqH6-->
+                    Nos especializamos en
+                    <em id="index-em-specialty" data-i18n-html="home.identityText1.em">
+                        mecánica general y diagnosis electrónica
+                    </em>.
+                </p>
+
+                <p>
+                    <!--ReqH7-->
+                    <dfn id="index-dfn-diagnosis" data-i18n-html="home.identityText2.dfn">
+                        La diagnosis electrónica
+                    </dfn>
+                    es el proceso de lectura de los códigos de error almacenados
+                    en la ECU del vehículo mediante un escáner especializado.
+                    En nuestro taller usamos el comando
+                    <code id="index-code-obd" data-i18n-html="home.identityText2.code">OBD-II</code>
+                    para conectar con los sistemas del coche.
+                    Como indica la normativa europea:
+                    <cite id="index-cite-normativa" data-i18n-html="home.identityText2.cite">
+                        Todo vehículo matriculado tras 2001 debe disponer de puerto OBD-II.
+                    </cite>
+                </p>
+            </article>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="home.servicesTitle">Nuestros servicios principales</h3>
+
+                <!--ReqH14-->
+                <h4 data-i18n="home.servicesUseTitle">Servicios ordenados por frecuencia de uso</h4>
+                <ol>
+                    <li data-i18n="home.servicesUseOil">Cambio de aceite y filtros</li>
+                    <li data-i18n="home.servicesUserev">Revisión de frenos</li>
+                    <li data-i18n="home.servicesUseDiag">Diagnosis electrónica</li>
+                    <li data-i18n="home.servicesUseChange">Cambio de neumáticos</li>
+                    <li data-i18n="home.servicesUseRepair">Reparación de motor</li>
+                </ol>
+
+                <h4 data-i18n="home.brandsTitle">Marcas con las que trabajamos</h4>
+                <ul>
+                    <li>Volkswagen
+                        <ul>
+                            <li>Golf</li>
+                            <li>Passat</li>
+                        </ul>
+                    </li>
+                    <li>Seat
+                        <ul>
+                            <li>Ibiza</li>
+                            <li>León</li>
+                        </ul>
+                    </li>
+                    <li>Ford</li>
+                    <li>Renault</li>
+                </ul>
+            </article>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="home.resourcesTitle">Recursos de interés</h2>
+            <!--ReqH9-->
+            <p>
+                <span data-i18n="home.resourcesDgt">Consulta la normativa oficial de la ITV en el sitio de la </span>
+                <a href="https://www.dgt.es" target="_blank" data-i18n="home.resourcesDgtLink">Dirección General de Tráfico</a>.
+            </p>
+            <!--ReqH11-->
+            <p>
+                <span data-i18n="home.resourcesContactText">¿Quieres ponerte en contacto con nosotros? </span>
+                <a href="pages/contacto.html" target="_self" data-i18n="home.resourcesContactLink">Visita nuestra página de contacto</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+        <!--ReqH12-->
+        <figure>
+            <a>
+                <!--ReqH10-->
+                <img id="main-logo" src="resources/images/logo.png" alt="Vista del logotipo" width="140" height="80">
+            </a>
+            <figcaption>Vista del logotipo del taller</figcaption>
+        </figure>
+        <p>&copy; 2026 Taller Mecánico Feralvar. Todos los derechos reservados.</p>
+        <p>Carretera de Santiago, 99 · Morcín, Asturias</p>
+    </footer>
+
+</body>
+</html>

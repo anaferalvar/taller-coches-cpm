@@ -1,0 +1,217 @@
+<!doctype html>
+<!--ReqH1-->
+<html lang="es-ES">
+<head>
+    <!--ReqH2-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánico Feralvar - Eventos y Servicios</title>
+    <meta name="author" content="Taller Mecánico Feralvar">
+    <meta name="description" content="Eventos especiales, promociones y descripción detallada de los servicios del Taller Mecánico Feralvar.">
+    <meta name="keywords" content="taller, eventos, promociones, servicios, mecánica, coches">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/i18n/translations.js"></script>
+    <script defer src="../js/i18n/translationsHTML.js"></script>
+    <script defer src="../js/i18n/i18n.js"></script>
+</head>
+<body>
+
+    <!--ReqH3-->
+    <header>
+        <h1 data-i18n="site.title">Taller Mecánico Feralvar</h1>
+        <p data-i18n="navigation.events">Eventos y Servicios</p>
+        <div class="language-box">
+            <label for="language-switcher" data-i18n="controls.language.label">Idioma</label>
+            <select id="language-switcher" onchange="setLocale(this.value)">
+                <option value="es" data-i18n="controls.language.spanish">Español</option>
+                <option value="en" data-i18n="controls.language.english">English</option>
+            </select>
+        </div>
+    </header>
+
+    <!--ReqH3-->
+    <nav>
+        <!--ReqH8-->
+        <ul>
+            <li><a href="../index.html" target="_self" data-i18n="navigation.home">Inicio</a></li>
+            <li><a href="eventos.html" target="_self" data-i18n="navigation.events">Eventos y Servicios</a></li>
+            <li><a href="contacto.html" target="_self" data-i18n="navigation.contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!--ReqH3-->
+    <main>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="events.upcomingTitle">Próximos eventos y promociones</h2>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="events.freeCheckTitle">Revisión gratuita de frenos — Abril 2026</h3>
+                <p>
+                    Durante el mes de abril ofrecemos una
+                    <!--ReqH6-->
+                    <strong id="ev-strong-free" data-i18n-html="events.freeCheck.strong">
+                        revisión gratuita de frenos
+                    </strong>
+                    con cualquier cambio de aceite.
+                    Es nuestra forma de agradecer la fidelidad de nuestros clientes.
+                </p>
+                <p>
+                    <!--ReqH6-->
+                    <em id="ev-em-plazas" data-i18n-html="events.freeCheck.em">Plazas limitadas</em>
+                    — reserva tu cita llamando al 981 000 000.
+                </p>
+            </article>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="events.openDayTitle">Jornada de puertas abiertas — Mayo 2026</h3>
+                <p>
+                    Te invitamos a conocer nuestras instalaciones y a hablar con nuestros mecánicos.
+                    Habrá
+                    <strong id="ev-strong-demo" data-i18n-html="events.openDay.strong">
+                        demostraciones en vivo
+                    </strong>
+                    de diagnosis electrónica y cambio de neumáticos.
+                </p>
+
+                <!--ReqH14-->
+                <h4 data-i18n="events.openDayProgTitle">Programa del día</h4>
+                <ol>
+                    <li data-i18n="events.openDayItem1">10:00 h — Bienvenida y visita al taller</li>
+                    <li data-i18n="events.openDayItem2">11:00 h — Demostración de diagnosis electrónica</li>
+                    <li data-i18n="events.openDayItem3">12:00 h — Taller práctico: cambio de rueda</li>
+                    <li data-i18n="events.openDayItem4">13:30 h — Comida de convivencia</li>
+                </ol>
+            </article>
+        </section>
+
+        <section class="taller-info">
+            <h2 data-i18n="events.monthlyMeeting.summaryTitle">Próximo encuentro</h2>
+            <p id="meeting-summary"></p>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="events.servicesTitle">Descripción detallada de servicios</h2>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="events.mechanicsTitle">Mecánica general</h3>
+                <p>
+                    Realizamos todo tipo de reparaciones mecánicas:
+                    <!--ReqH7-->
+                    <dfn id="ev-dfn-parmotor" data-i18n-html="events.mechanics.dfn">El par motor</dfn>
+                    es la fuerza de giro que entrega el motor, medida en Newton·metro (N·m).
+                    Comprobamos y ajustamos el par de apriete con la herramienta
+                    <code id="ev-code-torque" data-i18n-html="events.mechanics.code">torquímetro</code>
+                    para garantizar la seguridad de todas las piezas.
+                </p>
+
+                <!--ReqH14-->
+                <ul>
+                    <li data-i18n="events.mechanicsItem1">Cambio de distribución</li>
+                    <li data-i18n="events.mechanicsItem2">Reparación de embrague</li>
+                    <li data-i18n="events.mechanicsItem3">Sustitución de amortiguadores</li>
+                    <li data-i18n="events.mechanicsItem4">Revisión de dirección</li>
+                </ul>
+            </article>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="events.electricTitle">Electricidad y diagnosis</h3>
+                <p>
+                    Disponemos de equipos de última generación para la lectura y borrado de averías electrónicas.
+                    <strong data-i18n="events.electricStrong">Trabajamos con todos los protocolos modernos</strong>
+                    de comunicación vehicular.
+                </p>
+            </article>
+
+            <!--ReqH4-->
+            <article>
+                <h3 data-i18n="events.tiresTitle">Neumáticos y geometría</h3>
+                <p>
+                    Ofrecemos servicio completo de neumáticos: montaje, equilibrado y alineación de dirección.
+                    <!--ReqH6-->
+                    <em id="ev-em-geometria" data-i18n-html="events.tires.em">
+                        Una geometría correcta alarga la vida útil de los neumáticos.
+                    </em>
+                </p>
+            </article>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="events.calendarTitle">Calendario de revisiones recomendadas</h2>
+
+            <!--ReqH15-->
+            <table>
+                <caption data-i18n="events.tableCaption">Periodicidad recomendada de los mantenimientos</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2" data-i18n="events.tableService">Servicio</th>
+                        <th colspan="2" data-i18n="events.tableInterval">Intervalo recomendado</th>
+                    </tr>
+                    <tr>
+                        <th data-i18n="events.tableKm">Kilómetros</th>
+                        <th data-i18n="events.tableTime">Tiempo máximo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="events.tableOil">Cambio de aceite</td>
+                        <td data-i18n="events.tableOilKm">10.000 km</td>
+                        <td data-i18n="events.tableOilTime">1 año</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="events.tableAirFilter">Filtro de aire</td>
+                        <td data-i18n="events.tableAirKm">20.000 km</td>
+                        <td data-i18n="events.tableAirTime">2 años</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="events.tableBrakes">Pastillas de freno</td>
+                        <td data-i18n="events.tableBrakesKm">30.000 km</td>
+                        <td data-i18n="events.tableBrakesTime">3 años</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="events.tableGeneral">Revisión general</td>
+                        <td colspan="2" data-i18n="events.tableGeneralInterval">Anual (ITV incluida)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!--ReqH4-->
+        <section>
+            <h2 data-i18n="events.moreTitle">Más información</h2>
+            <!--ReqH9-->
+            <p>
+                <span data-i18n="events.moreText">Para consultar el estado de tu vehículo puedes visitar la web oficial de la </span>
+                <a href="https://www.race.es" target="_blank" data-i18n="events.moreLink">RACE (Real Automóvil Club de España)</a>.
+            </p>
+            <!--ReqH11-->
+            <p>
+                <span data-i18n="events.contactText">¿Tienes alguna pregunta? </span>
+                <a href="contacto.html" target="_self" data-i18n="events.contactLink">Escríbenos desde nuestra página de contacto</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <!--ReqH3-->
+    <footer>
+        <figure>
+            <a>
+                <!--ReqH10-->
+                <img id="main-logo" src="../resources/images/logo.png" alt="Vista del logotipo" width="140" height="80">
+            </a>
+            <figcaption>Vista del logotipo del taller</figcaption>
+        </figure>
+        <p>&copy; 2026 Taller Mecánico Feralvar. Todos los derechos reservados.</p>
+        <p>Carretera de Santiago, 99 · Morcín, Asturias</p>
+    </footer>
+
+</body>
+</html>
